@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+.my_class {
+	background: #000;
+}

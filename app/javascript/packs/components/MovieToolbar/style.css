@@ -1,0 +1,67 @@
+.movieToolbarContainer {
+	position: sticky;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	height: 64px;
+	padding: 0 16px;
+	background: #3f51b5;
+	z-index: 2;
+	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.movieToolbarContainer .toolbarTitleContainer .title {
+	font-family: 'Roboto-Light';
+	font-size: 26px;
+	letter-spacing: 0.005em;
+	line-height: 30px;
+	font-weight: 100;
+	color: #fff;
+}
+
+.movieToolbarContainer .toolbarButtonContainer {
+	margin: 0 4px;
+}
+
+.movieToolbarContainer .toolbarButtonContainer button {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	min-height: 36px;
+	min-width: 88px;
+	line-height: 36px;
+	vertical-align: middle;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	box-sizing: border-box;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	outline: none;
+	border: 0;
+	padding: 0 6px;
+	background: transparent;
+	color: currentColor;
+	white-space: nowrap;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 14px;
+	font-family: 'Roboto-Regular';
+	text-decoration: none;
+	overflow: hidden;
+	-webkit-transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+	background-color: rgba(158, 158, 158, 0);
+	letter-spacing: 0.01em;
+	color: #fff;
+}
+
+.movieToolbarContainer .toolbarButtonContainer button:focus,
+.movieToolbarContainer .toolbarButtonContainer button:hover {
+	background-color: rgba(158, 158, 158, 0.2);
+	text-decoration: none;
+}
