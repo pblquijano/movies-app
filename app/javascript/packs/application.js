@@ -20,6 +20,9 @@ import ToolbarTitle from './components/MovieToolbar/ToolbarTitle';
 import ToolbarButton from './components/MovieToolbar/ToolbarButton';
 import HomeMoviesContent from './components/HomeMoviesContent';
 import MoviesGrid from './components/HomeMoviesContent/MoviesGrid';
+import DetailMovieContent from './components/DetailMovieContent';
+import MovieDetails from './components/DetailMovieContent/MovieDetails';
+import MovieInfo from './components/DetailMovieContent/MovieInfo';
 
 ReactOnRails.register({
 	MovieTitle,
@@ -31,5 +34,8 @@ ReactOnRails.register({
 	ToolbarTitle,
 	ToolbarButton,
 	HomeMoviesContent,
-	MoviesGrid
+	MoviesGrid,
+	DetailMovieContent,
+	MovieDetails,
+	MovieInfo
 });

@@ -5,7 +5,7 @@ import MoviePicture from '../MoviePicture';
 import MovieRentPrice from '../MovieRentPrice';
 import './style.css';
 const MoviePreview = ({ img, price, title, genre }) => (
-	<div className="moviePreviewContainer">
+	<div className="moviePreviewContainer card">
 		<div className="priceInPictureContainer">
 			<MoviePicture img={img} />
 			<MovieRentPrice price={price} />

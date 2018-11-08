@@ -4,7 +4,9 @@ import './style.css';
 
 const ToolbarButton = ({ name }) => (
 	<div className="toolbarButtonContainer">
-		<button type="button">{name}</button>
+		<button className="toolbarButton" type="button">
+			{name}
+		</button>
 	</div>
 );
 ToolbarButton.propTypes = {

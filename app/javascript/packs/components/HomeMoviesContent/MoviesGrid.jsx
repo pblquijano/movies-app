@@ -4,7 +4,7 @@ import './style.css';
 import MoviePreview from '../MoviePreview';
 
 const MoviesGrid = ({ movies }) => {
-	const newMovies = movies.map(movie => <MoviePreview title={movie.title} genre={movie.genre} img={movie.img} price={movie.price} />);
+	const newMovies = movies.map((movie, i) => <MoviePreview key={i} title={movie.title} genre={movie.genre} img={movie.img} price={movie.price} />);
 	return <div className="row center-xs moviesGridContainer">{newMovies}</div>;
 };
 
