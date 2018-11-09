@@ -23,6 +23,8 @@ import MoviesGrid from './components/HomeMoviesContent/MoviesGrid';
 import DetailMovieContent from './components/DetailMovieContent';
 import MovieDetails from './components/DetailMovieContent/MovieDetails';
 import MovieInfo from './components/DetailMovieContent/MovieInfo';
+import FormMovieContent from './components/FormMovieContent';
+import MovieForm from './components/FormMovieContent/MovieForm';
 
 ReactOnRails.register({
 	MovieTitle,
@@ -37,5 +39,7 @@ ReactOnRails.register({
 	MoviesGrid,
 	DetailMovieContent,
 	MovieDetails,
-	MovieInfo
+	MovieInfo,
+	FormMovieContent,
+	MovieForm
 });

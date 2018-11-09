@@ -4,13 +4,29 @@ import './style.css';
 import ToolbarTitle from './ToolbarTitle';
 import ToolbarButton from './ToolbarButton';
 
+function getButtons(buttons) {
+	let buttons_temp = [];
+	if (buttons && buttons.length > 0) {
+		buttons_temp = buttons.map((button, i) => <ToolbarButton name={button.name} key={i} />);
+	}
+	return buttons_temp;
+}
+function getlinks(links) {
+	let links_temp = [];
+	if (links && links.length > 0) {
+		links_temp = links.map((button, i) => (
+			<a href="" key={i}>
+				{button.name}
+			</a>
+		));
+	}
+	return links_temp;
+}
+
 class MovieToolbar extends Component {
-	newButtons = this.props.buttons.map((button, i) => <ToolbarButton name={button.name} key={i} />);
-	newLinks = this.props.buttons.map((button, i) => (
-		<a href="" key={i}>
-			{button.name}
-		</a>
-	));
+	newButtons = getButtons(this.props.buttons);
+	newLinks = getlinks(this.props.buttons);
+
 	state = { showMenu: false, value: 'dropdown-content' };
 
 	toggleDropdown = () => {
