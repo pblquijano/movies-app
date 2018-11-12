@@ -10,36 +10,8 @@
 console.log('Hello World from Webpacker');
 
 import ReactOnRails from 'react-on-rails';
-import MovieTitle from './components/MovieTitle';
-import MovieGenre from './components/MovieGenre';
-import MoviePreview from './components/MoviePreview';
-import MoviePicture from './components/MoviePicture';
-import MovieRentPrice from './components/MovieRentPrice';
-import MovieToolbar from './components/MovieToolbar';
-import ToolbarTitle from './components/MovieToolbar/ToolbarTitle';
-import ToolbarButton from './components/MovieToolbar/ToolbarButton';
-import HomeMoviesContent from './components/HomeMoviesContent';
-import MoviesGrid from './components/HomeMoviesContent/MoviesGrid';
-import DetailMovieContent from './components/DetailMovieContent';
-import MovieDetails from './components/DetailMovieContent/MovieDetails';
-import MovieInfo from './components/DetailMovieContent/MovieInfo';
-import FormMovieContent from './components/FormMovieContent';
-import MovieForm from './components/FormMovieContent/MovieForm';
+import RouterMovies from '../components/RouterMovies';
 
 ReactOnRails.register({
-	MovieTitle,
-	MovieGenre,
-	MoviePreview,
-	MovieRentPrice,
-	MoviePicture,
-	MovieToolbar,
-	ToolbarTitle,
-	ToolbarButton,
-	HomeMoviesContent,
-	MoviesGrid,
-	DetailMovieContent,
-	MovieDetails,
-	MovieInfo,
-	FormMovieContent,
-	MovieForm
+	RouterMovies
 });
