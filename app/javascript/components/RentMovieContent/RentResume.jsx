@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.css';
 
 const RentResume = ({ movies_selected, total }) => {
@@ -21,5 +21,3 @@ const RentResume = ({ movies_selected, total }) => {
 };
 
 export default RentResume;
-
-//WebpackerReact.setup({ MovieTitle });

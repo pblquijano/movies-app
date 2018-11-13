@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './style.css';
 
 const MovieInfo = ({ duration, directed_by, synopsis }) => {
@@ -26,5 +25,3 @@ const MovieInfo = ({ duration, directed_by, synopsis }) => {
 };
 
 export default MovieInfo;
-
-//WebpackerReact.setup({ MovieTitle });

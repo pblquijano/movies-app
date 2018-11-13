@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css';
-import MoviePicture from '../MoviePicture';
-import MovieTitle from '../MovieTitle';
-import MovieGenre from '../MovieGenre';
+import MoviePicture from '../Shared/MoviePicture';
+import MovieTitle from '../Shared/MovieTitle';
+import MovieGenre from '../Shared/MovieGenre';
 import MovieInfo from './MovieInfo';
-import MovieRentPrice from '../MovieRentPrice';
+import MovieRentPrice from '../Shared/MovieRentPrice';
 
 const MovieDetails = ({ movie }) => (
 	<div className="row moviesDetailsContainer card">

@@ -1,7 +1,7 @@
 import MovieActionTypes from './MovieActionTypes';
 import AppDispatcher from './AppDispatcher';
 
-const MovieActions = {
+const MovieServerActions = {
 	showError: response => {
 		console.log(response);
 		AppDispatcher.handleServerAction({
@@ -41,4 +41,4 @@ const MovieActions = {
 	}
 };
 
-export default MovieActions;
+export default MovieServerActions;

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './style.css';
-import MoviePicture from '../MoviePicture';
-import MovieInput from '../MovieInput';
-import MovieButton from '../MovieButton';
-import MovieLoading from '../MovieLoading';
-import MovieNotification from '../MovieNotification';
+import MoviePicture from '../Shared/MoviePicture';
+import MovieInput from '../Shared/MovieInput';
+import MovieButton from '../Shared/MovieButton';
+import MovieLoading from '../Shared/MovieLoading';
+import MovieNotification from '../Shared/MovieNotification';
 import ImageUploader from 'react-images-upload';
 import MoviesStore from '../../flux/MoviesStore';
 import MovieActions from '../../flux/MovieActions';
 import MovieActionTypes from '../../flux/MovieActionTypes';
-import { Server } from 'net';
 
 class MovieForm extends Component {
 	constructor(props) {
@@ -53,25 +52,6 @@ class MovieForm extends Component {
 		MoviesStore.addChangeListener(this._onChange.bind(this));
 		if (this.state.id && this.state.id >= 0) {
 			this.action_name = MovieActions.getByID(this.state.id);
-			/*fetch('/movies/' + this.state.id)
-				.then(response => {
-					console.log('response', response);
-					return response.json();
-				})
-				.then(data => {
-					console.log('data', data);
-					this.setState({
-						title: data.title,
-						genre: data.genre,
-						duration: data.duration,
-						directed_by: data.directed_by,
-						synopsis: data.synopsis,
-						price: data.price,
-						img: data.img,
-						id: data.id,
-						isShowLoading: false
-					});
-				});*/
 		} else {
 			setTimeout(() => {
 				if (!this._isunmounted) {

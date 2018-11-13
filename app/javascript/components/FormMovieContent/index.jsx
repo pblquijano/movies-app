@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.css';
-import MovieToolbar from '../MovieToolbar';
+import MovieToolbar from '../Shared/MovieToolbar';
 import MovieForm from './MovieForm';
-import MyContainer from '../MyContainer';
+import MyContainer from '../Shared/MyContainer';
 import { withRouter } from 'react-router-dom';
 
 const FormMovieContent = ({ match, history }) => {

@@ -9,8 +9,7 @@ const MoviesApiUtils = {
 			.set('Accept', 'application/json')
 			.end(function(err, response) {
 				if (err) {
-					MovieServerActions.showError();
-					console.error(err);
+					MovieServerActions.showError(err);
 				} else {
 					MovieServerActions.receiveAll(response.body);
 				}
@@ -23,8 +22,7 @@ const MoviesApiUtils = {
 			.set('Accept', 'application/json')
 			.end(function(err, response) {
 				if (err) {
-					MovieServerActions.showError();
-					console.error(err);
+					MovieServerActions.showError(err);
 				} else {
 					MovieServerActions.receiveByID(response.body);
 				}
@@ -54,8 +52,7 @@ const MoviesApiUtils = {
 			.set('Accept', 'application/json')
 			.end(function(err, response) {
 				if (err) {
-					MovieServerActions.showError();
-					console.error(err);
+					MovieServerActions.showError(err);
 				} else {
 					MovieServerActions.addMovie(response.body);
 				}
@@ -68,8 +65,7 @@ const MoviesApiUtils = {
 			.set('Accept', 'application/json')
 			.end(function(err, response) {
 				if (err) {
-					MovieServerActions.showError();
-					console.error(err);
+					MovieServerActions.showError(err);
 				} else {
 					MovieServerActions.deleteMovie(id);
 				}

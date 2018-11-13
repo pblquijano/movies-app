@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './style.css';
-import MovieToolbar from '../MovieToolbar';
+import MovieToolbar from '../Shared/MovieToolbar';
 import MoviesList from './MoviesList';
 import RentResume from './RentResume';
-import MyContainer from '../MyContainer';
-import MovieLoading from '../MovieLoading';
-import MovieNotification from '../MovieNotification';
+import MyContainer from '../Shared/MyContainer';
+import MovieLoading from '../Shared/MovieLoading';
+import MovieNotification from '../Shared/MovieNotification';
 import MoviesStore from '../../flux/MoviesStore';
 import MovieActions from '../../flux/MovieActions';
 
@@ -79,9 +79,7 @@ class RentMovieContent extends Component {
 								}
 							}, 900);
 						})
-						.catch(err => {
-							//console.log('caught it!', err);
-						});
+						.catch(err => {});
 				}
 			}
 		];
@@ -97,29 +95,6 @@ class RentMovieContent extends Component {
 	componentDidMount() {
 		MoviesStore.addChangeListener(this._onChange.bind(this));
 		MovieActions.getAll();
-		/*fetch('/movies.json')
-			.then(response => {
-				return response.json();
-			})
-			.then(data => {
-				setTimeout(() => {
-					let total = 0;
-					let movies_selected_temp = [];
-					const movies_temp = data.map(movie => {
-						let movie_temp = movie;
-						if (this.id && parseInt(this.id) === parseInt(movie_temp.id)) {
-							movies_selected_temp.push(movie);
-							movie_temp.selected = true;
-							total += parseFloat(movie.price);
-						} else {
-							movie_temp.selected = false;
-						}
-						return movie_temp;
-					});
-					console.log(movies_selected_temp);
-					this.setState({ movies: movies_temp, isShowLoading: false, movies_selected: movies_selected_temp, total: total });
-				}, 900);
-			});*/
 	}
 	componentWillUnmount() {
 		this._isunmounted = true;
@@ -160,7 +135,6 @@ class RentMovieContent extends Component {
 				}
 			}
 		}, 900);
-		//this.setState({ movies: MoviesStore.getList(), isShowLoading: false });
 	}
 	handleInputChange(event) {
 		const target = event.target;
@@ -191,7 +165,7 @@ class RentMovieContent extends Component {
 				<MovieToolbar title={'Rent Movies'} buttons={this.buttons} haveBack={true} backAction={() => this.history.push(this.path)} />
 				<MyContainer>
 					<div className="rentData card row">
-						<MoviesList movies={this.state.movies} handleCheck={this.handleInputChange} />
+						<MoviesList movies={this.state.movies} handleChange={this.handleInputChange} />
 						<RentResume movies_selected={this.state.movies_selected} total={this.state.total} />
 					</div>
 				</MyContainer>

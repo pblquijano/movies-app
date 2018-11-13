@@ -5,22 +5,37 @@ class MoviesController < ApplicationController
         render json: Movie.all
     end
     def show
-        movie = Movie.find(params[:id])
-        render json: movie
+        movie = Movie.find_by_id(params[:id])
+        if movie.nil?
+            render json: { error: "Movie does not exist" }, status: :not_found
+        else
+            render json: movie
+        end
+        
     end
     def create
         movie = Movie.create(movie_params)
         render json: movie
     end
 
-    def destroy
-        Movie.destroy(params[:id])
+    def destroy        
+        movie = Movie.find_by_id(params[:id])
+        if movie.nil?
+            render json: { error: "Movie does not exist" }, status: :not_found
+        else
+            Movie.destroy(params[:id])
+        end
     end
 
     def update
-        movie = Movie.find(params[:id])
-        movie.update_attributes(movie_params)
-        render json: movie
+        movie = Movie.find_by_id(params[:id])
+        if movie.nil?
+            render json: { error: "Movie does not exist" }, status: :not_found
+        else
+            movie.update_attributes(movie_params)
+            render json: movie
+        end
+        
     end
 
     def make_a_rent        

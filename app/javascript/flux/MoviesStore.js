@@ -20,10 +20,15 @@ const _addMovie = movie => {
 };
 const _setError = message => {
 	_store.response.isSuccess = false;
-	_store.response.message = message;
+	if (message) {
+		_store.response.message = '' + message;
+	} else {
+		_store.response.message = '';
+	}
 };
 const _setSuccess = () => {
 	_store.response.isSuccess = true;
+	_store.response.message = '';
 };
 const _setElementInList = movie => {
 	if (_store.list.length > 0) {
@@ -80,10 +85,12 @@ const MoviesStore = ObjectAssign({}, EventEmitter.prototype, {
 
 		switch (action.actionType) {
 			case MovieActionTypes.GET_ALL_RESPONSE:
+				_setSuccess();
 				_setList(action.response);
 				MoviesStore.emitChange();
 				break;
 			case MovieActionTypes.GET_BY_ID_RESPONSE:
+				_setSuccess();
 				_setElementInList(action.response);
 				MoviesStore.emitChange();
 				break;
@@ -93,16 +100,15 @@ const MoviesStore = ObjectAssign({}, EventEmitter.prototype, {
 				MoviesStore.emitChange();
 				break;
 			case MovieActionTypes.HANDLE_ERROR:
-				console.log(action);
 				_setError(action.response);
 				MoviesStore.emitChange();
 				break;
-			case MovieActionTypes.DELETE_MOVIE_RESPONSE:
+			case MovieActionTypes.ADD_MOVIE_RESPONSE:
 				_setSuccess();
 				_addMovie(action.response);
 				MoviesStore.emitChange();
 				break;
-			case MovieActionTypes.ADD_MOVIE_RESPONSE:
+			case MovieActionTypes.DELETE_MOVIE_RESPONSE:
 				_setSuccess();
 				_deleteMovie(action.response);
 				MoviesStore.emitChange();

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './style.css';
-import MovieInput from '../MovieInput';
-import MovieButton from '../MovieButton';
+import MovieInput from '../Shared/MovieInput';
+import MovieButton from '../Shared/MovieButton';
 import MyImage from 'images/bg.jpg';
 
 class LoginMovieContent extends Component {

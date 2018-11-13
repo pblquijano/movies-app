@@ -2,12 +2,15 @@ import React from 'react';
 import './style.css';
 import MovieListItem from './MovieListItem';
 
-const MoviesList = ({ movies, handleCheck }) => {
+const MoviesList = ({ movies, handleChange }) => {
+	function handleChange(event) {
+		handleChange(event);
+	}
 	const newMovies = movies.map((movie, i) => (
 		<MovieListItem
 			key={i}
 			id={movie.id}
-			handleCheck={handleCheck}
+			handleChange={handleChange}
 			title={movie.title}
 			genre={movie.genre}
 			img={movie.img}

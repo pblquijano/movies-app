@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './style.css';
-import MoviePreview from '../MoviePreview';
+import MoviePreview from '../Shared/MoviePreview';
 
 const MoviesGrid = ({ movies, history }) => {
 	const newMovies = movies.map((movie, i) => (
@@ -19,5 +19,3 @@ const MoviesGrid = ({ movies, history }) => {
 };
 
 export default withRouter(MoviesGrid);
-
-//WebpackerReact.setup({ MovieTitle });

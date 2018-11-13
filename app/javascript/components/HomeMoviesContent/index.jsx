@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './style.css';
-import MovieToolbar from '../MovieToolbar';
+import MovieToolbar from '../Shared/MovieToolbar';
 import MoviesStore from '../../flux/MoviesStore';
 import MovieActions from '../../flux/MovieActions';
 import MoviesGrid from './MoviesGrid';
 import { withRouter } from 'react-router-dom';
-import MovieLoading from '../MovieLoading';
-import MovieNotification from '../MovieNotification';
+import MovieLoading from '../Shared/MovieLoading';
+import MovieNotification from '../Shared/MovieNotification';
 
 class HomeMoviesContent extends Component {
 	constructor(props) {
@@ -32,17 +32,6 @@ class HomeMoviesContent extends Component {
 	componentDidMount() {
 		MoviesStore.addChangeListener(this._onChange.bind(this));
 		MovieActions.getAll();
-		/*fetch('/movies.json')
-			.then(response => {
-				return response.json();
-			})
-			.then(data => {
-				console.log(data);
-				this.setState({ movies: data });
-				setTimeout(() => {
-					this.setState({ isShowLoading: false });
-				}, 900);
-			});*/
 	}
 
 	componentWillUnmount() {

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './style.css';
-import MovieToolbar from '../MovieToolbar';
+import MovieToolbar from '../Shared/MovieToolbar';
 import MovieDetails from './MovieDetails';
-import MyContainer from '../MyContainer';
-import MovieLoading from '../MovieLoading';
+import MyContainer from '../Shared/MyContainer';
+import MovieLoading from '../Shared/MovieLoading';
 import { withRouter } from 'react-router-dom';
 import MoviesStore from '../../flux/MoviesStore';
 import MovieActions from '../../flux/MovieActions';
-import MovieNotification from '../MovieNotification';
+import MovieNotification from '../Shared/MovieNotification';
 import MovieActionTypes from '../../flux/MovieActionTypes';
 
 class DetailMovieContent extends Component {
@@ -27,18 +27,6 @@ class DetailMovieContent extends Component {
 					action: () => {
 						this.setState({ isShowLoading: true, message: 'Removing movie...' });
 						this.action_name = MovieActions.deleteMovie(this.state.id);
-						/*fetch(`/movies/${props.match.params.id}`, {
-							method: 'DELETE',
-							headers: {
-								'Content-Type': 'application/json'
-							}
-						}).then(response => {
-							console.log(response);
-							if (response.status === 204) {
-								this.setState({ isShowLoading: false });
-								this.props.history.push('/');
-							}
-						});*/
 					}
 				}
 			],
@@ -56,17 +44,6 @@ class DetailMovieContent extends Component {
 		this._isunmounted = false;
 		MoviesStore.addChangeListener(this._onChange.bind(this));
 		this.action_name = MovieActions.getByID(this.state.id);
-		/*this.setState({ isShowLoading: true, message: 'Loading movie...' });
-		fetch('/movies/' + this.state.id)
-			.then(response => {
-				return response.json();
-			})
-			.then(data => {
-				console.log(data);
-				setTimeout(() => {
-					this.setState({ movie: data, isShowLoading: false });
-				}, 900);
-			});*/
 	}
 	componentWillUnmount() {
 		this._isunmounted = true;
@@ -88,7 +65,7 @@ class DetailMovieContent extends Component {
 								notification: {
 									isShowLoading: true,
 									title: 'Error',
-									message: 'Server Error',
+									message: response.message ? response.message : 'Server Error',
 									action: () => this.setState({ notification: { isShowLoading: false } }),
 									type: 'error'
 								}
@@ -115,7 +92,7 @@ class DetailMovieContent extends Component {
 								notification: {
 									isShowLoading: true,
 									title: 'Error',
-									message: 'Server Error',
+									message: response.message ? response.message : 'Server Error',
 									action: () => this.setState({ notification: { isShowLoading: false } }),
 									type: 'error'
 								}
