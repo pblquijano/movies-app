@@ -59,29 +59,10 @@ test:
     public_output_path: packs-test
 
 production:
-    source_path: app/javascript
-    source_entry_path: packs
-    public_output_path: packs
-    cache_path: tmp/cache/webpacker
+    <<: *default
 
-    # Additional paths webpack should lookup modules
-    # ['app/assets', 'engine/foo/app/assets']
-    resolved_paths: ['app/assets']
+    # Production depends on precompilation of packs prior to booting for performance.
+    compile: false
 
-    # Reload manifest.json on all requests so we reload latest compiled packs
-    cache_manifest: false
-
-    extensions:
-        - .jsx
-        - .js
-        - .sass
-        - .scss
-        - .css
-        - .module.sass
-        - .module.scss
-        - .module.css
-        - .png
-        - .svg
-        - .gif
-        - .jpeg
-        - .jpg
+    # Cache manifest.json for performance
+    cache_manifest: true
